@@ -1,13 +1,26 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
+/**
+ * 3. Wzorując się na przykładzie 2 napisz program DecToTri, który będzie konwertował
+ * liczbę dziesiętną na zapis trójkowy, użyj wielowariantowej instrukcji if().
+ */
+public class DecToTri {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Podaj liczbę dziesiętną dodatnią: ");
+        int liczbaD = scanner.nextInt();
+        int liczba = liczbaD;
+        String wynik = "";
+        while (liczba != 0){
+            if(liczba % 3 == 0){
+                wynik = "0" + wynik;
+            }else if (liczba % 3 == 1){
+                wynik = "1" + wynik;
+            }else{
+                wynik = "2" + wynik;
+            }
+            liczba = liczba / 3;
+        }
+        System.out.printf("liczba des. %d to zapis trójkowy %s", liczbaD, wynik);
+    }
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
 }
